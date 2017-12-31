@@ -1,0 +1,22 @@
+<center>
+<strong>
+<h2>
+  <%= @article.video_artist %> ft. <%= @article.featured_artists %> - <%= @article.video_title %>
+</h2>
+</strong>
+
+<p>
+  <%= raw(@article.video_link) %>
+</p>
+
+<p>
+  Music video by <%= link_to (@article.video_artist), @article.artist_link %>
+  <% if @article.featured_artists? %> featuring <%= @article.featured_artists %><% end %>
+  <% if @article.video_album? %> off "<%= @article.video_album %>"<% end %>.
+  <% if @article.video_director? %><br><br>Directed by <%= @article.video_director %>.<% end %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+</center>

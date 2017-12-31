@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<center>
+<br>
+<h1>Artists</h1>
+
+<div id="inline-list">
+<%= alphabetical_paginate @alphaParams %>
+</div>
+
+<div id="pagination_table">
+<% @artists.each do |artist| %>
+  <%= link_to (artist.artist_name), artist %>&nbsp&nbsp
+<% end %>
+<br><br>
+<%= link_to 'Add Artist', new_artist_path %>
+<br>
+</div>
+
+</center>
+
+
+
+
+
+

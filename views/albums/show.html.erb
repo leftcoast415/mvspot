@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<img src="<%= @album.avatar %>"</img><br>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @album.release_date %>
+</p>
+
+<p>
+  <strong>Album cover:</strong>
+  <%= @album.album_cover %>
+</p>
+
+<p>
+  <strong>Tracklist:</strong>
+  <%= @album.tracklist %>
+</p>
+
+<p>
+  <strong>Album video:</strong>
+  <%= @album.album_video %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @album.artist %>
+</p>
+
+<%= link_to 'Edit', edit_artist_album_path(@album.artist, @album) %> |
+<%= link_to 'Delete', [@album.artist, @album], method: :delete, data: { confirm: 'Are you sure?' } %>
+

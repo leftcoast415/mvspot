@@ -1,0 +1,39 @@
+<%= form_with(model: [@artist, @artist.albums.build ], local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :avatar, 'Album Cover:' %><br>
+    <%= form.file_field :avatar %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :album_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :release_date %>
+    <%= form.date_field :release_date, id: :album_release_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :album_cover %>
+    <%= form.text_field :album_cover, id: :album_album_cover %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tracklist %>
+    <%= form.text_area :tracklist, id: :album_tracklist %>
+  </div>
+
+  <div class="field">
+    <%= form.label :album_video %>
+    <%= form.text_field :album_video, id: :album_album_video %>
+  </div>
+
+  <%= form.hidden_field :artist_id %>    
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

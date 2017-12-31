@@ -1,0 +1,26 @@
+<center>
+
+<h1><u>DISCOVER</u></h1><br>
+  
+<% @articles.each do |article| %>
+<h2>
+  <%= link_to (article.video_artist) + ' ft. ' + (article.featured_artists) + ' - ' + (article.video_title), article_path(article) %>
+</h2>
+
+<p>
+  <%= raw(article.video_link) %>
+</p>
+
+<p>
+  Music video by <%= link_to (article.video_artist), article.artist_link %>
+  <% if article.featured_artists? %> featuring <%= article.featured_artists %><% end %>
+  <% if article.video_album? %> off "<%= article.video_album %>"<% end %>.
+  <% if article.video_director? %><br><br>Directed by <%= article.video_director %>.<% end %>
+</p>
+
+  <%= link_to 'Edit', edit_article_path(article) %> |
+  <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+<br><br>
+<hr>
+<% end %>
+</center>
